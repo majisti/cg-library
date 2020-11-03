@@ -54,7 +54,7 @@ class PhpParameter extends AbstractBuilder
 
         if (method_exists($ref, 'getType')) {
             if ($type = $ref->getType()) {
-                $parameter->setType((string)$type);
+                $parameter->setType($type->getName());
             }
         } else {
             if ($ref->isArray()) {

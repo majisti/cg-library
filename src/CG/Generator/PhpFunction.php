@@ -49,7 +49,7 @@ class PhpFunction extends AbstractBuilder
 
         if (method_exists($ref, 'getReturnType')) {
             if ($type = $ref->getReturnType()) {
-                $function->setReturnType((string)$type);
+                $function->setReturnType($type->getName());
             }
         }
         $function->referenceReturned = $ref->returnsReference();
